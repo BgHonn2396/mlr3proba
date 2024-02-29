@@ -54,7 +54,7 @@ autoplot.TaskSurv = function(object, type = "target", theme = theme_minimal(), r
         data = object$data()
       )
 
-      plot = GGally::ggsurv(sf, remove_named(ddd, "rhs"))
+      plot = GGally::ggsurv(sf, remove_named(ddd, "rhs"), plot.cens = ddd$plot.cens %??% T)
       plot + theme
     },
 
